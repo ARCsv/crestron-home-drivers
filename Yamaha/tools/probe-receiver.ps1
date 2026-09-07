@@ -1,6 +1,6 @@
 param(
     [Parameter(Mandatory = $false)]
-    [string]$HostAddress = "192.168.78.22",
+    [string]$HostAddress = "127.0.0.1",
 
     [int]$Port = 80
 )

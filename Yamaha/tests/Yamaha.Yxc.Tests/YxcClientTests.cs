@@ -89,7 +89,7 @@ namespace Yamaha.Yxc.Tests
             var path = Path.Combine(AppContext.BaseDirectory, "live-getFeatures.json");
             Assert.True(File.Exists(path), "Expected docs/live-getFeatures.json copied to test output.");
             var handler = new StubHandler(File.ReadAllText(path));
-            using var client = new YxcClient("192.168.78.22", httpClient: new HttpClient(handler));
+            using var client = new YxcClient("192.168.1.50", httpClient: new HttpClient(handler));
 
             var features = await client.GetFeaturesAsync();
 

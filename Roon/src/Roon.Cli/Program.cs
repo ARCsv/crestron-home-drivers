@@ -2,20 +2,20 @@ using System.Net.WebSockets;
 using System.Text;
 using System.Text.Json;
 
-const string Host = "192.168.78.12";
+var host = args.Length > 0 ? args[0] : "127.0.0.1";
 const int Port = 9330;
-const string ZoneWanted = "Living Room";
+var zoneWanted = args.Length > 1 ? args[1] : "Living Room";
 
-Console.WriteLine($"Roon Core {Host}:{Port}  zone '{ZoneWanted}'");
+Console.WriteLine($"Roon Core {host}:{Port}  zone '{zoneWanted}'");
 Console.WriteLine("If zones come back Unauthorized, enable this extension in Roon:");
 Console.WriteLine("  Settings → Extensions → Cadence Works Crestron Probe → Enable");
 Console.WriteLine();
 
 using var cts = new CancellationTokenSource(TimeSpan.FromMinutes(10));
 using var ws = new ClientWebSocket();
-await ws.ConnectAsync(new Uri($"ws://{Host}:{Port}/api"), cts.Token);
+await ws.ConnectAsync(new Uri($"ws://{host}:{Port}/api"), cts.Token);
 Console.WriteLine("WebSocket open — leave this running.");
-Console.WriteLine("In Roon on the Mac Mini: Settings → Extensions.");
+Console.WriteLine("In Roon: Settings → Extensions.");
 Console.WriteLine("You should see Cadence Works Crestron Probe. Enable it.");
 Console.WriteLine();
 
@@ -122,7 +122,7 @@ while (!cts.IsCancellationRequested && ws.State == WebSocketState.Open)
 
     if ((msg.Verb == "CONTINUE" && (msg.Name == "Subscribed" || msg.Name == "Changed")) && msg.Body.Length > 0)
     {
-        PrintZones(msg.Body, ZoneWanted);
+        PrintZones(msg.Body, zoneWanted);
     }
 }
 

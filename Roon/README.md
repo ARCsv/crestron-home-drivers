@@ -1,25 +1,17 @@
-# Roon Core → Crestron Home
+# Roon Core
 
-Crestron Home **Streaming Player** (Video Server) driver for Jonathan’s Roon Core. That native type is what Home can **source-route** to the Yamaha.
+Crestron Home packages for a Roon Core zone.
 
-**Live Core:** `192.168.78.12`, API port **9330**. Zone **Living Room**.
+- `pkg/Roon.Crestron.pkg` — Streaming Player (room source; route to Yamaha USB DAC)
+- `pkg/Roon.Ui.Crestron.pkg` — Media Player now-playing tile (not a source)
 
-Media Player in Home is an extension tile. It does not show up in source routing. This package stays a Video Server so it can be routed to USB DAC.
+See the [repository README](../README.md) for setup, the two-package split, and Home SDK limits.
 
-## Run
+Build:
 
 ```powershell
-cd "C:\cursor Crestron project\Roon"
 dotnet build src\Roon.Crestron\Roon.Crestron.csproj -c Release
+dotnet build src\Roon.Ui.Crestron\Roon.Ui.Crestron.csproj -c Release
 ```
 
-Output: `pkg\Roon.Crestron.pkg` (`1.0002.0000`)
-
-1. SFTP to `\User\ThirdPartyDrivers\Import`
-2. Remove any Media Player Roon device
-3. Add **Streaming Player → Roon Core (Cadence Works/Cursor)**
-4. IP `192.168.78.12`, port **9330**
-5. Source-route it to the Yamaha **USB DAC** input
-6. Enable **Cadence Works Crestron Roon** in Roon if asked
-
-Volume stays on the Yamaha driver.
+Enable the matching extension in Roon → Settings → Extensions. Default API port is **9330**. Volume stays on the Yamaha driver.
