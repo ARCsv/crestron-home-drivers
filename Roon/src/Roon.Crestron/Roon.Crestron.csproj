@@ -1,0 +1,44 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <RootNamespace>Roon.Crestron</RootNamespace>
+    <AssemblyName>Roon.Crestron</AssemblyName>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);1591</NoWarn>
+    <Version>1.0.5</Version>
+    <AssemblyVersion>1.0.5.0</AssemblyVersion>
+    <FileVersion>1.0.5.0</FileVersion>
+    <InformationalVersion>1.0005.0000</InformationalVersion>
+    <ManifestUtilExe>C:\Crestron\crestron_drivers_sdk_28.0000.0015\ManifestUtil\ManifestUtil.exe</ManifestUtilExe>
+    <PkgOutDir>$(MSBuildThisFileDirectory)..\..\pkg</PkgOutDir>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Crestron.DeviceDrivers.DevKit" Version="27.0.24" />
+    <PackageReference Include="Crestron.SimplSharp.SDK.Library" Version="2.21.90" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Roon.Api\*.cs" Link="Api\%(Filename)%(Extension)" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Roon.Crestron.json" />
+  </ItemGroup>
+  <Target Name="PackCrestronDriver" AfterTargets="Build">
+    <PropertyGroup>
+      <_PkgStage>$([System.IO.Path]::Combine($(TargetDir), 'pkgstage'))</_PkgStage>
+    </PropertyGroup>
+    <RemoveDir Directories="$(_PkgStage)" Condition="Exists('$(_PkgStage)')" />
+    <MakeDir Directories="$(_PkgStage)" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(_PkgStage)" />
+    <Exec Command="xcopy /E /I /Y &quot;$(MSBuildThisFileDirectory)IncludeInPkg&quot; &quot;$(_PkgStage)\IncludeInPkg\&quot;" />
+    <Exec Command="&quot;$(ManifestUtilExe)&quot; &quot;$(_PkgStage)&quot;" />
+    <MakeDir Directories="$(PkgOutDir)" />
+    <ItemGroup>
+      <_Pkg Include="$(_PkgStage)\*.pkg" />
+    </ItemGroup>
+    <Copy SourceFiles="@(_Pkg)" DestinationFolder="$(PkgOutDir)" Condition="'@(_Pkg)' != ''" />
+    <Warning Text="ManifestUtil did not produce a .pkg in $(_PkgStage)" Condition="'@(_Pkg)' == ''" />
+  </Target>
+</Project>

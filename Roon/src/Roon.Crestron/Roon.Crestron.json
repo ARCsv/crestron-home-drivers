@@ -1,0 +1,138 @@
+{
+  "CrestronSerialDeviceApi": {
+    "DeviceSupport": {
+      "SupportsPlay": true,
+      "SupportsPause": true,
+      "SupportsStop": true,
+      "SupportsPlayPause": true,
+      "SupportsForwardSkip": true,
+      "SupportsReverseSkip": true,
+      "SupportsDisconnect": true,
+      "SupportsReconnect": true,
+      "SupportsFeedback": true
+    },
+    "DeviceSupport2": [ "SupportsPlayPause" ],
+    "GeneralInformation": {
+      "DeviceType": "Video Server",
+      "Manufacturer": "Roon",
+      "BaseModel": "Core",
+      "VersionDate": "2026-09-06 22:55:00.000",
+      "DriverVersion": "1.0005.0000",
+      "SdkVersion": "2.00.005",
+      "Description": "Roon Core source for Crestron Home. Select it on the remote, route audio to the Yamaha USB DAC. Enable Cadence Works Crestron Roon in Roon Settings. Volume is the Yamaha driver. Created by Cadence Works and Cursor.",
+      "Guid": "3f8e1c2a-9b47-4d6e-a1c0-7e5d92f44b10",
+      "DependencyGroup": "",
+      "Developer": {
+        "Company": "Cadence Works/Cursor",
+        "Contact": "Cadence Works",
+        "Email": "",
+        "Website": "",
+        "PhoneNumber": ""
+      },
+      "SupportedSeries": [ "Core" ],
+      "SupportedModels": [ "Core" ]
+    },
+    "Api": {
+      "Communication": {
+        "CommunicationType": 1,
+        "Protocol": -1,
+        "Baud": -1,
+        "Parity": -1,
+        "HwHandshake": -1,
+        "SwHandshake": -1,
+        "DataBits": 0,
+        "StopBits": -1,
+        "Port": 9330,
+        "EnableAutoPolling": false,
+        "EnableAutoReconnect": true,
+        "TimeBetweenCommands": 250,
+        "ResponseTimeout": 4000,
+        "WaitForResponse": false,
+        "IpProtocol": 0,
+        "IsUserAdjustable": false,
+        "Authentication": { "Type": "None", "Required": false },
+        "IsSecure": false,
+        "UserAdjustableProperties": null,
+        "DeviceId": 0
+      },
+      "MediaServiceProviders": {
+        "SupportsMediaServices": true,
+        "HasDirectAccessToApps": false,
+        "SupportsActiveMediaServiceFeedback": true,
+        "SupportsActiveMediaServiceStateFeedback": false,
+        "SupportsMediaServiceSubscriptionStateFeedback": false,
+        "AvailableServices": [
+          {
+            "Id": "roon",
+            "FriendlyName": "Roon",
+            "Command": "",
+            "IsBranded": true,
+            "IsSelectable": false,
+            "SupportedFeatureData": [
+              {
+                "ComponentInterface": "IMediaTransport",
+                "SupportStatements": [ "SupportsPlay", "SupportsPause", "SupportsStop", "SupportsForwardSkip", "SupportsReverseSkip" ]
+              },
+              {
+                "ComponentInterface": "IMediaTransport2",
+                "SupportStatements": [ "SupportsPlayPause" ]
+              }
+            ]
+          }
+        ],
+        "FeedbackData": {
+          "GroupHeader": "",
+          "ActiveServiceFeedbackData": {
+            "GroupHeader": null,
+            "Feedback": { "roon": "Roon" }
+          },
+          "PlaybackStateFeedbackData": null
+        },
+        "MediaServicePollCommand": null,
+        "MediaServicePollingEnabled": false
+      },
+      "StandardCommands": {
+        "Play": { "StandardCommand": 12901, "Command": "ROON", "Parameters": [] },
+        "Pause": { "StandardCommand": 12900, "Command": "ROON", "Parameters": [] },
+        "Stop": { "StandardCommand": 14000, "Command": "ROON", "Parameters": [] },
+        "PlayPause": { "StandardCommand": 12902, "Command": "ROON", "Parameters": [] },
+        "ForwardSkip": { "StandardCommand": 12802, "Command": "ROON", "Parameters": [] },
+        "ReverseSkip": { "StandardCommand": 12803, "Command": "ROON", "Parameters": [] }
+      },
+      "CustomCommands": [],
+      "AudioInOut": {
+        "Inputs": [],
+        "Outputs": [ { "type": 29901, "description": "Roon Zone", "connector": 40, "friendlyName": "Living Room" } ]
+      },
+      "VideoInOut": {
+        "Inputs": [],
+        "Outputs": [ { "type": 29901, "description": "Roon Zone", "connector": 40, "friendlyName": "Living Room" } ]
+      },
+      "Feedback": {
+        "SupportsUnsolicitedFeedback": true,
+        "Header": "",
+        "CommandAckNak": { "Ack": "", "Nak": "" }
+      }
+    },
+    "UserAttributes": [
+      {
+        "TypeName": "MessageBox",
+        "ParameterId": "EnableNotice",
+        "Label": "Roon Extension",
+        "Description": "Enable Cadence Works Crestron Roon in Roon Settings → Extensions.",
+        "Persistent": false,
+        "RequiredForConnection": "None",
+        "Data": { "DataType": "", "Mask": "", "DefaultValue": "" }
+      },
+      {
+        "TypeName": "Custom",
+        "ParameterId": "ZoneName",
+        "Label": "Roon zone",
+        "Description": "Which Roon zone to control.",
+        "Persistent": true,
+        "RequiredForConnection": "Before",
+        "Data": { "DataType": "String", "Mask": "", "DefaultValue": "Living Room" }
+      }
+    ]
+  }
+}

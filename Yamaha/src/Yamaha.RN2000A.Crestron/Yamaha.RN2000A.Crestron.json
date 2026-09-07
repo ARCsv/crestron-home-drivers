@@ -1,0 +1,197 @@
+{
+  "CrestronSerialDeviceApi": {
+    "DeviceSupport": {
+      "SupportsDiscretePower": true,
+      "SupportsPowerFeedback": true,
+      "SupportsDiscreteMute": true,
+      "SupportsMute": true,
+      "SupportsMuteFeedback": true,
+      "SupportsSetVolume": true,
+      "SupportsChangeVolume": true,
+      "SupportsVolumePercentFeedback": true,
+      "SupportsFeedback": true,
+      "SupportsInputFeedback": true,
+      "SupportsSetInputSource": true,
+      "SupportsSetAudioInputSource": true,
+      "SupportsSetVideoInputSource": true,
+      "SupportsAudioInputFeedback": true,
+      "SupportsVideoInputFeedback": true,
+      "SupportsDisconnect": true,
+      "SupportsReconnect": true
+    },
+    "GeneralInformation": {
+      "DeviceType": "AV Receiver",
+      "Manufacturer": "Yamaha",
+      "BaseModel": "R-N2000A",
+      "VersionDate": "2026-09-06 21:15:00.000",
+      "DriverVersion": "1.0011.0000",
+      "SdkVersion": "2.00.005",
+      "Description": "Yamaha R-N2000A over Yamaha Extended Control (YXC) HTTP JSON. Enable Network Standby on the receiver. Set the IP in Crestron Home Setup. Volume range is 0–154. Created by Cadence Works and Cursor.",
+      "Guid": "c8e4b2a1-7d3f-4c9e-a512-0b6d8f2e4419",
+      "DependencyGroup": "",
+      "Developer": {
+        "Company": "Cadence Works/Cursor",
+        "Contact": "Cadence Works",
+        "Email": "",
+        "Website": "",
+        "PhoneNumber": ""
+      },
+      "SupportedSeries": [ "R-N" ],
+      "SupportedModels": [ "R-N2000A" ]
+    },
+    "Api": {
+      "Communication": {
+        "CommunicationType": 1,
+        "Protocol": -1,
+        "Baud": -1,
+        "Parity": -1,
+        "HwHandshake": -1,
+        "SwHandshake": -1,
+        "DataBits": 0,
+        "StopBits": -1,
+        "Port": 80,
+        "EnableAutoPolling": true,
+        "EnableAutoReconnect": true,
+        "TimeBetweenCommands": 250,
+        "ResponseTimeout": 4000,
+        "WaitForResponse": false,
+        "IpProtocol": 0,
+        "IsUserAdjustable": false,
+        "Authentication": {
+          "Type": "None",
+          "Required": false
+        },
+        "IsSecure": false,
+        "UserAdjustableProperties": null,
+        "DeviceId": 0
+      },
+      "StandardCommands": {
+        "PowerOn": { "StandardCommand": 6602, "Command": "YXC", "Parameters": [] },
+        "PowerOff": { "StandardCommand": 6601, "Command": "YXC", "Parameters": [] },
+        "PowerPoll": { "StandardCommand": 6603, "Command": "YXC", "Parameters": [] },
+        "MuteOn": { "StandardCommand": 4602, "Command": "YXC", "Parameters": [] },
+        "MuteOff": { "StandardCommand": 4601, "Command": "YXC", "Parameters": [] },
+        "MutePoll": { "StandardCommand": 4603, "Command": "YXC", "Parameters": [] },
+        "Vol": {
+          "StandardCommand": 7000,
+          "Command": "YXC",
+          "Parameters": [
+            { "Type": 0, "PadCharacter": "0", "PadDirection": 0, "Id": "vol", "Max": 100, "Min": 0, "StaticDataWidth": 3 }
+          ]
+        },
+        "VolMinus": { "StandardCommand": 7001, "Command": "YXC", "Parameters": [] },
+        "VolPlus": { "StandardCommand": 7002, "Command": "YXC", "Parameters": [] },
+        "VolumePoll": { "StandardCommand": 7003, "Command": "YXC", "Parameters": [] },
+        "Input1": { "StandardCommand": 1800, "Command": "YXC", "Parameters": [] },
+        "Input2": { "StandardCommand": 1801, "Command": "YXC", "Parameters": [] },
+        "Input3": { "StandardCommand": 1802, "Command": "YXC", "Parameters": [] },
+        "Input4": { "StandardCommand": 1803, "Command": "YXC", "Parameters": [] },
+        "Input5": { "StandardCommand": 1804, "Command": "YXC", "Parameters": [] },
+        "Input6": { "StandardCommand": 1805, "Command": "YXC", "Parameters": [] },
+        "Input7": { "StandardCommand": 1806, "Command": "YXC", "Parameters": [] },
+        "Input8": { "StandardCommand": 1807, "Command": "YXC", "Parameters": [] },
+        "Input9": { "StandardCommand": 1808, "Command": "YXC", "Parameters": [] },
+        "Input10": { "StandardCommand": 1809, "Command": "YXC", "Parameters": [] },
+        "Usb1": { "StandardCommand": 1200, "Command": "YXC", "Parameters": [] },
+        "Network1": { "StandardCommand": 1600, "Command": "YXC", "Parameters": [] },
+        "Bluetooth1": { "StandardCommand": 30220, "Command": "YXC", "Parameters": [] },
+        "InputPoll": { "StandardCommand": 1900, "Command": "YXC", "Parameters": [] },
+        "Spotify": { "StandardCommand": 30200, "Command": "YXC", "Parameters": [] },
+        "Tidal": { "StandardCommand": 30201, "Command": "YXC", "Parameters": [] },
+        "Airplay": { "StandardCommand": 30202, "Command": "YXC", "Parameters": [] },
+        "InternetRadio": { "StandardCommand": 30203, "Command": "YXC", "Parameters": [] },
+        "Deezer": { "StandardCommand": 30204, "Command": "YXC", "Parameters": [] }
+      },
+      "CustomCommands": [],
+      "AudioInOut": {
+        "Inputs": [
+          { "type": 1800, "description": "Optical 1 (TV Audio)", "connector": 130, "friendlyName": "Optical 1" },
+          { "type": 1801, "description": "Optical 2", "connector": 130, "friendlyName": "Optical 2" },
+          { "type": 1802, "description": "Coaxial", "connector": 130, "friendlyName": "Coaxial" },
+          { "type": 1803, "description": "Line 1", "connector": 130, "friendlyName": "Line 1" },
+          { "type": 1804, "description": "Line 2", "connector": 130, "friendlyName": "Line 2" },
+          { "type": 1805, "description": "CD", "connector": 130, "friendlyName": "CD" },
+          { "type": 1806, "description": "Phono", "connector": 130, "friendlyName": "Phono" },
+          { "type": 1807, "description": "USB DAC", "connector": 130, "friendlyName": "USB DAC" },
+          { "type": 1200, "description": "Roon / USB DAC", "connector": 130, "friendlyName": "Roon USB" },
+          { "type": 1808, "description": "TV", "connector": 130, "friendlyName": "TV" },
+          { "type": 1809, "description": "Tuner", "connector": 130, "friendlyName": "Tuner" },
+          { "type": 1600, "description": "Server", "connector": 130, "friendlyName": "Server" },
+          { "type": 30220, "description": "Bluetooth", "connector": 130, "friendlyName": "Bluetooth" }
+        ],
+        "Outputs": [
+          { "type": 29901, "description": "Speaker", "connector": 40, "friendlyName": "Speakers" }
+        ]
+      },
+      "VideoInOut": {
+        "Inputs": [
+          { "type": 1800, "description": "Optical 1 (TV Audio)", "connector": 150, "friendlyName": "Optical 1" },
+          { "type": 1801, "description": "Optical 2", "connector": 150, "friendlyName": "Optical 2" },
+          { "type": 1808, "description": "TV", "connector": 150, "friendlyName": "TV" },
+          { "type": 1200, "description": "Roon / USB DAC", "connector": 150, "friendlyName": "Roon USB" }
+        ],
+        "Outputs": []
+      },
+      "Feedback": {
+        "SupportsUnsolicitedFeedback": false,
+        "Header": "",
+        "PowerFeedback": { "Feedback": { "On": "ON", "Off": "OFF" }, "GroupHeader": "" },
+        "MuteFeedback": { "Feedback": { "On": "ON", "Off": "OFF" }, "GroupHeader": "" },
+        "VolumeFeedback": { "GroupHeader": "" },
+        "InputFeedback": {
+          "GroupHeader": "",
+          "Feedback": [
+            { "InputType": 1800, "Feedback": "optical1" },
+            { "InputType": 1801, "Feedback": "optical2" },
+            { "InputType": 1802, "Feedback": "coaxial" },
+            { "InputType": 1803, "Feedback": "line1" },
+            { "InputType": 1804, "Feedback": "line2" },
+            { "InputType": 1805, "Feedback": "line_cd" },
+            { "InputType": 1806, "Feedback": "phono" },
+            { "InputType": 1807, "Feedback": "usb_dac" },
+            { "InputType": 1200, "Feedback": "usb_dac" },
+            { "InputType": 1808, "Feedback": "tv" },
+            { "InputType": 1809, "Feedback": "tuner" },
+            { "InputType": 1600, "Feedback": "server" },
+            { "InputType": 30220, "Feedback": "bluetooth" }
+          ]
+        },
+        "AudioInputFeedback": {
+          "GroupHeader": "",
+          "Feedback": [
+            { "AudioInputType": 1800, "Feedback": "optical1" },
+            { "AudioInputType": 1801, "Feedback": "optical2" },
+            { "AudioInputType": 1802, "Feedback": "coaxial" },
+            { "AudioInputType": 1803, "Feedback": "line1" },
+            { "AudioInputType": 1804, "Feedback": "line2" },
+            { "AudioInputType": 1805, "Feedback": "line_cd" },
+            { "AudioInputType": 1806, "Feedback": "phono" },
+            { "AudioInputType": 1807, "Feedback": "usb_dac" },
+            { "AudioInputType": 1200, "Feedback": "usb_dac" },
+            { "AudioInputType": 1808, "Feedback": "tv" },
+            { "AudioInputType": 1809, "Feedback": "tuner" },
+            { "AudioInputType": 1600, "Feedback": "server" },
+            { "AudioInputType": 30220, "Feedback": "bluetooth" },
+            { "AudioInputType": 30200, "Feedback": "spotify" },
+            { "AudioInputType": 30201, "Feedback": "tidal" },
+            { "AudioInputType": 30202, "Feedback": "airplay" },
+            { "AudioInputType": 30203, "Feedback": "net_radio" },
+            { "AudioInputType": 30204, "Feedback": "deezer" }
+          ]
+        },
+        "CommandAckNak": { "Ack": "", "Nak": "" }
+      }
+    },
+    "UserAttributes": [
+      {
+        "TypeName": "MessageBox",
+        "ParameterId": "Configuration Notice",
+        "Label": "Network Standby",
+        "Description": "Enable Network Standby on the receiver.",
+        "Persistent": false,
+        "RequiredForConnection": "None",
+        "Data": { "DataType": "", "Mask": "", "DefaultValue": "" }
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<uidefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://prd-use-rad-assets.azurewebsites.net/ExtensionsSchemaDefinition.xsd">
+  <version ver="3.0" />
+  <tile status="{status}" icon="{icon}" action="command:playpause" navigation="show:nowPlaying" showinhomepage="#true" showinroompage="#true"/>
+  <layouts>
+    <layout id="nowPlaying" title="^nowPlaying" isdefaultlayout="#true">
+      <controls>
+        <textdisplay id="trackDisplay" title="^track" line1label="{title}" line2label="{artist}" line3label="{album}" />
+        <radialgauge id="progressGauge" label="^time" radialvalue="{progress}" line1label="{elapsed}" line2label="{remaining}" line3label="{state}" />
+        <controlgroup>
+          <buttongroup>
+            <button id="previousButton" label="^previous" action="command:previous"/>
+            <button id="playPauseButton" label="^playPause" action="command:playpause"/>
+            <button id="nextButton" label="^next" action="command:next"/>
+          </buttongroup>
+        </controlgroup>
+        <controlgroup>
+          <buttongroup>
+            <button id="playButton" label="^play" action="command:play"/>
+            <button id="pauseButton" label="^pause" action="command:pause"/>
+            <button id="stopButton" label="^stop" action="command:stop"/>
+          </buttongroup>
+        </controlgroup>
+      </controls>
+    </layout>
+  </layouts>
+  <alerts />
+</uidefinition>

@@ -1,0 +1,99 @@
+{
+  "CrestronSerialDeviceApi": {
+    "DeviceSupport": {
+      "SupportsPlay": true,
+      "SupportsPause": true,
+      "SupportsStop": true,
+      "SupportsPlayPause": true,
+      "SupportsForwardSkip": true,
+      "SupportsReverseSkip": true,
+      "SupportsDisconnect": true,
+      "SupportsReconnect": true,
+      "SupportsFeedback": true
+    },
+    "DeviceSupport2": [ "SupportsPlayPause" ],
+    "GeneralInformation": {
+      "DeviceType": "Media Player",
+      "Manufacturer": "Roon",
+      "BaseModel": "Now Playing",
+      "VersionDate": "2026-09-06 23:10:00.000",
+      "DriverVersion": "1.0000.0000",
+      "SdkVersion": "4.00.000",
+      "Description": "Roon now playing for Crestron Home iPad and touch panels. Transport and track text. Not a room source. Route audio with the Roon Core Streaming Player or Yamaha USB DAC. Enable Cadence Works Crestron Roon iPad in Roon Settings. Created by Cadence Works and Cursor.",
+      "Guid": "7c2a9e14-5b8d-4f1a-9c3e-2d6f80a1b447",
+      "DependencyGroup": "",
+      "Developer": {
+        "Company": "Cadence Works/Cursor",
+        "Contact": "Cadence Works",
+        "Email": "",
+        "Website": "",
+        "PhoneNumber": ""
+      },
+      "ExtensionDeviceData": {
+        "IsExtensionDevice": true,
+        "IsMediaDevice": false,
+        "IsMediaSource": false
+      },
+      "SupportedSeries": [ "Now Playing" ],
+      "SupportedModels": [ "Now Playing" ]
+    },
+    "Api": {
+      "Communication": {
+        "CommunicationType": 1,
+        "Protocol": -1,
+        "Baud": -1,
+        "Parity": -1,
+        "HwHandshake": -1,
+        "SwHandshake": -1,
+        "DataBits": 0,
+        "StopBits": -1,
+        "Port": 9330,
+        "EnableAutoPolling": false,
+        "EnableAutoReconnect": true,
+        "TimeBetweenCommands": 250,
+        "ResponseTimeout": 4000,
+        "WaitForResponse": false,
+        "IpProtocol": 0,
+        "IsUserAdjustable": false,
+        "Authentication": { "Type": "None", "Required": false },
+        "IsSecure": false,
+        "UserAdjustableProperties": null,
+        "DeviceId": 0
+      },
+      "CustomCommands": [],
+      "AudioInOut": {
+        "Inputs": [],
+        "Outputs": []
+      },
+      "VideoInOut": {
+        "Inputs": [],
+        "Outputs": []
+      },
+      "Feedback": {
+        "SupportsUnsolicitedFeedback": true,
+        "Header": "",
+        "CommandAckNak": { "Ack": "", "Nak": "" }
+      }
+    },
+    "UserAttributes": [
+      {
+        "TypeName": "MessageBox",
+        "ParameterId": "EnableNotice",
+        "Label": "Roon Extension",
+        "Description": "Enable Cadence Works Crestron Roon iPad in Roon Settings → Extensions. This tile is now playing only.",
+        "Persistent": false,
+        "RequiredForConnection": "None",
+        "Data": { "DataType": "", "Mask": "", "DefaultValue": "" }
+      },
+      {
+        "TypeName": "Custom",
+        "ParameterId": "ZoneName",
+        "Label": "Roon zone",
+        "Description": "Which Roon zone to show.",
+        "Persistent": true,
+        "RequiredForConnection": "Before",
+        "Data": { "DataType": "String", "Mask": "", "DefaultValue": "Living Room" }
+      }
+    ]
+  }
+}
